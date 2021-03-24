@@ -59,7 +59,7 @@ You can run it using pytest , initially check whether `pytest` is in the system,
 pip install pytest
 ```
 
-Then the test_sudoku.py script as follows :
+Then run the test_sudoku.py script as follows :
 
 ```
 pytest test_sudoku.py
