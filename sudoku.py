@@ -154,7 +154,7 @@ class Sudoku:
 
             self.no_of_solutions = 0
             copied_matrix = [each_row[:]for each_row in self.matrix]
-            print(self.solve_grid(copied_matrix))
+            self.solve_grid(copied_matrix)
 
             # If the Puzzle has more than one Solution replace the 
             # last taken cell value in that 
