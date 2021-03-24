@@ -181,9 +181,13 @@ def remove_cells(matrix, attempts):
 
 # Function to print the Sudoku Grid 
 def print_matrix(matrix):
+    no_of_zeros = 0
     print(" --" + "--"*(N) + "--")
     for row in range(N):
         for col in range(N):
+            if matrix[row][col] == 0: 
+                no_of_zeros += 1
+
             if col % SRN == 0:
                 print("| " + str(matrix[row][col]), end=" ")
             elif col == N - 1:
@@ -197,6 +201,9 @@ def print_matrix(matrix):
         else:
             print()
 
+
+    if no_of_zeros != 0:
+        print("Number of Cells Removed = ", no_of_zeros)
 
 def main():
     """Main Function
@@ -220,7 +227,7 @@ def main():
     print_matrix(matrix)
 
     print("\n\nFinal Result \n")
-    remove_cells(matrix, 2)
+    remove_cells(matrix, 10)
     print_matrix(matrix)
 
 
