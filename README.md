@@ -52,3 +52,15 @@ puzzle_grid = object.main()
 ## Test Cases
 
 So far i added two test cases in the test_sudoku.py file which consists of one puzzle which is automatically generated puzzle and the test program checks that it has only one solution or not , then the second test case is custom input by the user where the user has to provide a puzzle in 2D list format.
+
+You can run it using pytest , initially check whether `pytest` is in the system, if not present install using `pip` command
+
+```
+pip install pytest
+```
+
+Then the test_sudoku.py script as follows :
+
+```
+pytest test_sudoku.py
+```
