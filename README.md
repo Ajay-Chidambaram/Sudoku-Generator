@@ -30,7 +30,7 @@ Then the run the gui.py script
 python gui.py
 ```
 
-you will be output as an application window which is currently non-interactive , just to show the puzzle purpose only
+you will get output as an application window which is currently non-interactive , just for the purpose of showing the puzzle only.
 
 ![alt text](https://github.com/Ajay-Chidambaram/Sudoku-Generator/blob/main/Images/sudoku_pygame.PNG)
 
