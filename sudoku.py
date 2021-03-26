@@ -10,6 +10,7 @@ Algorithm:
 """
 
 from random import randint, shuffle
+import argparse
 import math
 
 class Sudoku:
@@ -30,7 +31,7 @@ class Sudoku:
         self.number_list = list(range(1, self.N + 1))
         self.no_of_solutions = 1
 
-    def main(self):
+    def get_puzzle(self):
         self.__fill_grid(self.matrix)
         self.print_matrix()
         print("\n\nPuzzle\n")
@@ -98,6 +99,7 @@ class Sudoku:
 
         row, col = self.__check_grid(matrix)
 
+        # If grid is fully filled return TRUE
         if row == -1 and col == -1:
             return True
 
@@ -121,6 +123,7 @@ class Sudoku:
         
         row, col = self.__check_grid(matrix)
         
+        # If grid is fully filled return TRUE
         if row == -1 and col == -1:
             return True
 
@@ -176,6 +179,7 @@ class Sudoku:
 
         row, col = self.__check_grid(matrix)
 
+        # If grid is fully filled return TRUE
         if row == -1 and col == -1:
             return True
         
@@ -201,14 +205,14 @@ class Sudoku:
                 if element == "0": 
                     no_of_zeros += 1
 
-                if col % self.SRN == 0:
+                if col % self.SRN == 0:       # To separate columns into Square Root of N times
                     print("| " + element, end=" ")
-                elif col == self.N - 1:
+                elif col == self.N - 1:        # To add "|" in last column
                     print(element + "|", end=" ")
-                else:
+                else:                           # This is for normal elements
                     print(element, end=" ")
             
-            if (row + 1) % self.SRN == 0:
+            if (row + 1) % self.SRN == 0:   # To separate rows into Square Root of N times
                 print("\n --" + "--"*(self.N) + "--")
             else:
                 print()
@@ -220,7 +224,15 @@ class Sudoku:
 
 if __name__ == "__main__":
 
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-d", "--difficulty", type=int, help="1- Easy, 2- Medium (default), 3- Hard")
+    args = parser.parse_args()
+    
     N = 9            # Dimension of the Grid
-    difficulty = 2      # Difficulty of the Puzzle ranges from ( 1 - 7 ) as 1 being the Lowest
+    difficulty = 2    # default value
+    
+    if args.difficulty:
+        difficulty = args.difficulty      # Difficulty of the Puzzle ranges from ( 1 - 7 ) as 1 being the Lowest
+
     obj = Sudoku(N, difficulty)
-    obj.main()
+    obj.get_puzzle()

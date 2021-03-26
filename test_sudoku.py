@@ -6,7 +6,7 @@ N = 9            # Dimension of the Grid
 difficulty = 2      # Difficulty of the Puzzle ranges from ( 1 - 7 ) as 1 being the Lowest
 
 obj = sudoku.Sudoku(N, difficulty)
-matrix = obj.main()
+matrix = obj.get_puzzle()
 
 # Custom Puzzle Check
 custom_matrix = [       [1, 6, 7, 0, 9, 0, 0, 0, 0],
@@ -20,8 +20,12 @@ custom_matrix = [       [1, 6, 7, 0, 9, 0, 0, 0, 0],
                         [6, 0, 4, 0, 0, 3, 0, 8, 0]
                 ]
 
+
+
+
 def test_puzzle():
         assert obj.solver(matrix) == True
 
 def test_custom_puzzle():
         assert obj.solver(custom_matrix) == True
+
