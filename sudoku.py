@@ -222,6 +222,9 @@ class Sudoku:
             print("Number of Cells Removed : ", no_of_zeros)
 
 
+class DifficultyError(Exception):
+    pass
+
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
@@ -234,5 +237,8 @@ if __name__ == "__main__":
     if args.difficulty:
         difficulty = args.difficulty      # Difficulty of the Puzzle ranges from ( 1 - 7 ) as 1 being the Lowest
 
+    if difficulty > 3:
+        raise DifficultyError("The value should be from 1 to 3 only ..... Please try again !!!")
+        
     obj = Sudoku(N, difficulty)
     obj.get_puzzle()
