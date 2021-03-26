@@ -16,6 +16,14 @@ python sudoku.py
 
 It will generate a Actual Solution and also a Puzzle by removing some elements in it thereby providing a unique solution
 
+You can also specify the difficulty level using the `-d` or `--difficulty` optional flag , which need int as an argument it should range from 1 to 3 as 1 being the easy one
+
+Usage is as follows ,
+
+```
+python sudoku.py -d 3
+```
+
 ## Puzzle GUI
 
 Inorder to get puzzle gui you need pygame in your system, if not install it using `pip` command as follows
@@ -30,7 +38,7 @@ Then the run the gui.py script
 python gui.py
 ```
 
-you will get output as an application window which is currently non-interactive , just for the purpose of showing the puzzle only.
+you will get output as an png image which will be saved in your current directory as Sudoku-puzzle , just for the purpose of showing the puzzle to the users.
 
 ![alt text](https://github.com/Ajay-Chidambaram/Sudoku-Generator/blob/main/Images/sudoku_pygame.PNG)
 
